@@ -29,4 +29,9 @@ public class CadastroController {
         return optionalPessoa.isPresent() ? ResponseEntity.of(optionalPessoa) : ResponseEntity.notFound().build();
     }
 
+    @PostMapping
+    public Pessoa adicionarPessoa(@RequestBody Pessoa pessoa) {
+        return pessoaRepository.save(pessoa);
+    }
+
 }
